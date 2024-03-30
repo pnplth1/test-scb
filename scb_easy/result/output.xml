@@ -1,0 +1,1502 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.2 (Python 3.8.2 on win32)" generated="20200418 17:49:32.176" rpa="false">
+<suite id="s1" name="scbApp" source="C:\Users\MRG-PC\Downloads\robotframework\scb_easy\scbApp.robot">
+<test id="s1-t1" name="Read JSON File">
+<kw name="Read json file" library="TransferMenuKeyword">
+<kw name="Load JSON From File" library="JSONLibrary">
+<doc>Load JSON from file.</doc>
+<arguments>
+<arg>C:/Users/MRG-PC/Downloads/robotframework/scb_easy/Resource/dataFile/dataTransfer.json</arg>
+</arguments>
+<assign>
+<var>${json_obj}</var>
+</assign>
+<msg timestamp="20200418 17:49:32.481" level="INFO">${json_obj} = {'bank_number': '3542688266', 'bank_name': 'TMB', 'amount': '1', 'pin': '357951', 'url_confirm': 'http://restapi.demoqa.com/customer', 'que_id': 'david1234', 'ref_id': 'david1234', 'status': True}</msg>
+<status status="PASS" starttime="20200418 17:49:32.481" endtime="20200418 17:49:32.481"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${json_obj}</arg>
+</arguments>
+<msg timestamp="20200418 17:49:32.481" level="INFO">${json_obj} = {'bank_number': '3542688266', 'bank_name': 'TMB', 'amount': '1', 'pin': '357951', 'url_confirm': 'http://restapi.demoqa.com/customer', 'que_id': 'david1234', 'ref_id': 'david1234', 'status': True}</msg>
+<status status="PASS" starttime="20200418 17:49:32.481" endtime="20200418 17:49:32.481"></status>
+</kw>
+<status status="PASS" starttime="20200418 17:49:32.481" endtime="20200418 17:49:32.481"></status>
+</kw>
+<status status="PASS" starttime="20200418 17:49:32.480" endtime="20200418 17:49:32.482" critical="yes"></status>
+</test>
+<test id="s1-t2" name="Open Applications">
+<kw name="Open App Android" library="TransferMenuKeyword">
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<arguments>
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION}</arg>
+<arg>deviceName=${DEVICE_NAME}</arg>
+</arguments>
+<status status="PASS" starttime="20200418 17:49:32.482" endtime="20200418 17:49:41.621"></status>
+</kw>
+<status status="PASS" starttime="20200418 17:49:32.482" endtime="20200418 17:49:41.621"></status>
+</kw>
+<status status="PASS" starttime="20200418 17:49:32.482" endtime="20200418 17:49:41.622" critical="yes"></status>
+</test>
+<test id="s1-t3" name="Transfer Money app">
+<kw name="Close pop up" library="TransferMenuKeyword">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Wait Until Keyword Succeeds</arg>
+<arg>30s</arg>
+<arg>2s</arg>
+<arg>Wait Until Page Contains Element</arg>
+<arg>${popupAds}</arg>
+</arguments>
+<assign>
+<var>${status_popup}</var>
+</assign>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<arguments>
+<arg>30s</arg>
+<arg>2s</arg>
+<arg>Wait Until Page Contains Element</arg>
+<arg>${popupAds}</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${popupAds}</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20200418 17:49:53.649" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-1.png"&gt;&lt;img src="appium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200418 17:49:52.303" endtime="20200418 17:49:53.649"></status>
+</kw>
+<msg timestamp="20200418 17:49:53.649" level="FAIL">Element 'id=com.scb.phone:id/iv_ads' did not appear in 5 seconds</msg>
+<status status="FAIL" starttime="20200418 17:49:41.623" endtime="20200418 17:49:53.649"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${popupAds}</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20200418 17:50:07.301" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-2.png"&gt;&lt;img src="appium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200418 17:50:06.044" endtime="20200418 17:50:07.301"></status>
+</kw>
+<msg timestamp="20200418 17:50:07.301" level="FAIL">Element 'id=com.scb.phone:id/iv_ads' did not appear in 5 seconds</msg>
+<status status="FAIL" starttime="20200418 17:49:55.650" endtime="20200418 17:50:07.301"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${popupAds}</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20200418 17:50:20.647" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-3.png"&gt;&lt;img src="appium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200418 17:50:19.599" endtime="20200418 17:50:20.647"></status>
+</kw>
+<msg timestamp="20200418 17:50:20.647" level="FAIL">Element 'id=com.scb.phone:id/iv_ads' did not appear in 5 seconds</msg>
+<status status="FAIL" starttime="20200418 17:50:09.302" endtime="20200418 17:50:20.648"></status>
+</kw>
+<msg timestamp="20200418 17:50:20.648" level="FAIL">Keyword 'Wait Until Page Contains Element' failed after retrying for 30 seconds. The last error was: Element 'id=com.scb.phone:id/iv_ads' did not appear in 5 seconds</msg>
+<status status="FAIL" starttime="20200418 17:49:41.623" endtime="20200418 17:50:20.648"></status>
+</kw>
+<msg timestamp="20200418 17:50:20.648" level="INFO">${status_popup} = False</msg>
+<status status="PASS" starttime="20200418 17:49:41.623" endtime="20200418 17:50:20.648"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status_popup}' == 'True'</arg>
+<arg>Close pop up all</arg>
+</arguments>
+<status status="PASS" starttime="20200418 17:50:20.648" endtime="20200418 17:50:20.648"></status>
+</kw>
+<status status="PASS" starttime="20200418 17:49:41.622" endtime="20200418 17:50:20.648"></status>
+</kw>
+<kw name="Click pay tab" library="TransferMenuKeyword">
+<kw name="Check Error Timeout" library="TransferMenuKeyword">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Wait Until Keyword Succeeds</arg>
+<arg>30s</arg>
+<arg>2s</arg>
+<arg>Wait Until Page Contains Element</arg>
+<arg>${ErrorTimeout}</arg>
+</arguments>
+<assign>
+<var>${status_popup}</var>
+</assign>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<arguments>
+<arg>30s</arg>
+<arg>2s</arg>
+<arg>Wait Until Page Contains Element</arg>
+<arg>${ErrorTimeout}</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${ErrorTimeout}</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20200418 17:50:32.818" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-4.png"&gt;&lt;img src="appium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200418 17:50:31.612" endtime="20200418 17:50:32.818"></status>
+</kw>
+<msg timestamp="20200418 17:50:32.818" level="FAIL">Element 'xpath=//android.widget.TextView[contains(@resource-id,'dialog_title')]' did not appear in 5 seconds</msg>
+<status status="FAIL" starttime="20200418 17:50:20.649" endtime="20200418 17:50:32.818"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${ErrorTimeout}</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20200418 17:50:46.323" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-5.png"&gt;&lt;img src="appium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200418 17:50:45.278" endtime="20200418 17:50:46.323"></status>
+</kw>
+<msg timestamp="20200418 17:50:46.323" level="FAIL">Element 'xpath=//android.widget.TextView[contains(@resource-id,'dialog_title')]' did not appear in 5 seconds</msg>
+<status status="FAIL" starttime="20200418 17:50:34.818" endtime="20200418 17:50:46.323"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${ErrorTimeout}</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20200418 17:51:00.006" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-6.png"&gt;&lt;img src="appium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200418 17:50:58.991" endtime="20200418 17:51:00.006"></status>
+</kw>
+<msg timestamp="20200418 17:51:00.006" level="FAIL">Element 'xpath=//android.widget.TextView[contains(@resource-id,'dialog_title')]' did not appear in 5 seconds</msg>
+<status status="FAIL" starttime="20200418 17:50:48.323" endtime="20200418 17:51:00.006"></status>
+</kw>
+<msg timestamp="20200418 17:51:00.006" level="FAIL">Keyword 'Wait Until Page Contains Element' failed after retrying for 30 seconds. The last error was: Element 'xpath=//android.widget.TextView[contains(@resource-id,'dialog_title')]' did not appear in 5 seconds</msg>
+<status status="FAIL" starttime="20200418 17:50:20.649" endtime="20200418 17:51:00.006"></status>
+</kw>
+<msg timestamp="20200418 17:51:00.006" level="INFO">${status_popup} = False</msg>
+<status status="PASS" starttime="20200418 17:50:20.649" endtime="20200418 17:51:00.006"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status_popup}' == 'True'</arg>
+<arg>Click Element</arg>
+<arg>${buttonPopupOK}</arg>
+</arguments>
+<status status="PASS" starttime="20200418 17:51:00.007" endtime="20200418 17:51:00.007"></status>
+</kw>
+<status status="PASS" starttime="20200418 17:50:20.649" endtime="20200418 17:51:00.007"></status>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<arguments>
+<arg>30s</arg>
+<arg>2s</arg>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${iconPay}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${iconPay}</arg>
+</arguments>
+<status status="PASS" starttime="20200418 17:51:00.007" endtime="20200418 17:51:30.806"></status>
+</kw>
+<status status="PASS" starttime="20200418 17:51:00.007" endtime="20200418 17:51:30.806"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${iconPay}</arg>
+</arguments>
+<msg timestamp="20200418 17:51:30.809" level="INFO">Clicking element 'xpath=//android.widget.LinearLayout[contains(@resource-id,'request_to_pay_tab')]'.</msg>
+<status status="PASS" starttime="20200418 17:51:30.806" endtime="20200418 17:52:11.728"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${transferMenu}</arg>
+</arguments>
+<msg timestamp="20200418 17:52:11.733" level="INFO">Clicking element 'android=UiSelector().index(4)'.</msg>
+<status status="PASS" starttime="20200418 17:52:11.728" endtime="20200418 17:53:34.770"></status>
+</kw>
+<kw name="Check Input PIN" library="TransferMenuKeyword">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Wait Until Keyword Succeeds</arg>
+<arg>30s</arg>
+<arg>2s</arg>
+<arg>Wait Until Page Contains Element</arg>
+<arg>${InputPin}</arg>
+</arguments>
+<assign>
+<var>${status_inputpin}</var>
+</assign>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<arguments>
+<arg>30s</arg>
+<arg>2s</arg>
+<arg>Wait Until Page Contains Element</arg>
+<arg>${InputPin}</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${InputPin}</arg>
+</arguments>
+<status status="PASS" starttime="20200418 17:53:34.771" endtime="20200418 17:53:34.950"></status>
+</kw>
+<status status="PASS" starttime="20200418 17:53:34.771" endtime="20200418 17:53:34.950"></status>
+</kw>
+<msg timestamp="20200418 17:53:34.950" level="INFO">${status_inputpin} = True</msg>
+<status status="PASS" starttime="20200418 17:53:34.771" endtime="20200418 17:53:34.950"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status_inputpin}' == 'True'</arg>
+<arg>Click PIN</arg>
+</arguments>
+<kw name="Click PIN" library="TransferMenuKeyword">
+<kw name="Substring pin get json" library="TransferMenuKeyword">
+<kw name="Get Value From Json" library="JSONLibrary">
+<doc>Get Value From JSON using JSONPath</doc>
+<arguments>
+<arg>${json_obj}</arg>
+<arg>$.pin</arg>
+</arguments>
+<assign>
+<var>${pin_value}</var>
+</assign>
+<msg timestamp="20200418 17:53:34.970" level="INFO">${pin_value} = ['357951']</msg>
+<status status="PASS" starttime="20200418 17:53:34.950" endtime="20200418 17:53:34.970"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${pin_value[0]}</arg>
+</arguments>
+<status status="PASS" starttime="20200418 17:53:34.970" endtime="20200418 17:53:34.970"></status>
+</kw>
+<kw name="Get Substring" library="String">
+<doc>Returns a substring from ``start`` index to ``end`` index.</doc>
+<arguments>
+<arg>${pin_value[0]}</arg>
+<arg>0</arg>
+<arg>1</arg>
+</arguments>
+<assign>
+<var>${pin_sub_1}</var>
+</assign>
+<msg timestamp="20200418 17:53:34.971" level="INFO">${pin_sub_1} = 3</msg>
+<status status="PASS" starttime="20200418 17:53:34.970" endtime="20200418 17:53:34.971"></status>
+</kw>
+<kw name="Get Substring" library="String">
+<doc>Returns a substring from ``start`` index to ``end`` index.</doc>
+<arguments>
+<arg>${pin_value[0]}</arg>
+<arg>1</arg>
+<arg>2</arg>
+</arguments>
+<assign>
+<var>${pin_sub_2}</var>
+</assign>
+<msg timestamp="20200418 17:53:34.971" level="INFO">${pin_sub_2} = 5</msg>
+<status status="PASS" starttime="20200418 17:53:34.971" endtime="20200418 17:53:34.971"></status>
+</kw>
+<kw name="Get Substring" library="String">
+<doc>Returns a substring from ``start`` index to ``end`` index.</doc>
+<arguments>
+<arg>${pin_value[0]}</arg>
+<arg>2</arg>
+<arg>3</arg>
+</arguments>
+<assign>
+<var>${pin_sub_3}</var>
+</assign>
+<msg timestamp="20200418 17:53:34.971" level="INFO">${pin_sub_3} = 7</msg>
+<status status="PASS" starttime="20200418 17:53:34.971" endtime="20200418 17:53:34.971"></status>
+</kw>
+<kw name="Get Substring" library="String">
+<doc>Returns a substring from ``start`` index to ``end`` index.</doc>
+<arguments>
+<arg>${pin_value[0]}</arg>
+<arg>3</arg>
+<arg>4</arg>
+</arguments>
+<assign>
+<var>${pin_sub_4}</var>
+</assign>
+<msg timestamp="20200418 17:53:34.972" level="INFO">${pin_sub_4} = 9</msg>
+<status status="PASS" starttime="20200418 17:53:34.971" endtime="20200418 17:53:34.972"></status>
+</kw>
+<kw name="Get Substring" library="String">
+<doc>Returns a substring from ``start`` index to ``end`` index.</doc>
+<arguments>
+<arg>${pin_value[0]}</arg>
+<arg>4</arg>
+<arg>5</arg>
+</arguments>
+<assign>
+<var>${pin_sub_5}</var>
+</assign>
+<msg timestamp="20200418 17:53:34.972" level="INFO">${pin_sub_5} = 5</msg>
+<status status="PASS" starttime="20200418 17:53:34.972" endtime="20200418 17:53:34.972"></status>
+</kw>
+<kw name="Get Substring" library="String">
+<doc>Returns a substring from ``start`` index to ``end`` index.</doc>
+<arguments>
+<arg>${pin_value[0]}</arg>
+<arg>5</arg>
+<arg>6</arg>
+</arguments>
+<assign>
+<var>${pin_sub_6}</var>
+</assign>
+<msg timestamp="20200418 17:53:34.972" level="INFO">${pin_sub_6} = 1</msg>
+<status status="PASS" starttime="20200418 17:53:34.972" endtime="20200418 17:53:34.972"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${pin_sub_1}</arg>
+</arguments>
+<msg timestamp="20200418 17:53:34.972" level="INFO">${pin_sub_1} = 3</msg>
+<status status="PASS" starttime="20200418 17:53:34.972" endtime="20200418 17:53:34.972"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${pin_sub_2}</arg>
+</arguments>
+<msg timestamp="20200418 17:53:34.973" level="INFO">${pin_sub_2} = 5</msg>
+<status status="PASS" starttime="20200418 17:53:34.972" endtime="20200418 17:53:34.973"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${pin_sub_3}</arg>
+</arguments>
+<msg timestamp="20200418 17:53:34.973" level="INFO">${pin_sub_3} = 7</msg>
+<status status="PASS" starttime="20200418 17:53:34.973" endtime="20200418 17:53:34.973"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${pin_sub_4}</arg>
+</arguments>
+<msg timestamp="20200418 17:53:34.973" level="INFO">${pin_sub_4} = 9</msg>
+<status status="PASS" starttime="20200418 17:53:34.973" endtime="20200418 17:53:34.973"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${pin_sub_5}</arg>
+</arguments>
+<msg timestamp="20200418 17:53:34.973" level="INFO">${pin_sub_5} = 5</msg>
+<status status="PASS" starttime="20200418 17:53:34.973" endtime="20200418 17:53:34.973"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${pin_sub_6}</arg>
+</arguments>
+<msg timestamp="20200418 17:53:34.974" level="INFO">${pin_sub_6} = 1</msg>
+<status status="PASS" starttime="20200418 17:53:34.974" endtime="20200418 17:53:34.974"></status>
+</kw>
+<status status="PASS" starttime="20200418 17:53:34.950" endtime="20200418 17:53:34.974"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'1' == '${pin_sub_1}'</arg>
+<arg>Click Element</arg>
+<arg>${pin_1}</arg>
+<arg>ELSE IF</arg>
+<arg>'2' == '${pin_sub_1}'</arg>
+<arg>Click Element</arg>
+<arg>${pin_2}</arg>
+<arg>ELSE IF</arg>
+<arg>'3' == '${pin_sub_1}'</arg>
+<arg>Click Element</arg>
+<arg>${pin_3}</arg>
+<arg>ELSE IF</arg>
+<arg>'4' == '${pin_sub_1}'</arg>
+<arg>Click Element</arg>
+<arg>${pin_4}</arg>
+<arg>ELSE IF</arg>
+<arg>'5' == '${pin_sub_1}'</arg>
+<arg>Click Element</arg>
+<arg>${pin_5}</arg>
+<arg>ELSE IF</arg>
+<arg>'6' == '${pin_sub_1}'</arg>
+<arg>Click Element</arg>
+<arg>${pin_6}</arg>
+<arg>ELSE IF</arg>
+<arg>'7' == '${pin_sub_1}'</arg>
+<arg>Click Element</arg>
+<arg>${pin_7}</arg>
+<arg>ELSE IF</arg>
+<arg>'8' == '${pin_sub_1}'</arg>
+<arg>Click Element</arg>
+<arg>${pin_8}</arg>
+<arg>ELSE IF</arg>
+<arg>'9' == '${pin_sub_1}'</arg>
+<arg>Click Element</arg>
+<arg>${pin_9}</arg>
+<arg>ELSE IF</arg>
+<arg>'0' == '${pin_sub_1}'</arg>
+<arg>Click Element</arg>
+<arg>${pin_0}</arg>
+</arguments>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${pin_3}</arg>
+</arguments>
+<msg timestamp="20200418 17:53:34.976" level="INFO">Clicking element 'xpath=//android.widget.Button[contains(@resource-id,'button_3')]'.</msg>
+<status status="PASS" starttime="20200418 17:53:34.974" endtime="20200418 17:53:35.232"></status>
+</kw>
+<status status="PASS" starttime="20200418 17:53:34.974" endtime="20200418 17:53:35.232"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'1' == '${pin_sub_2}'</arg>
+<arg>Click Element</arg>
+<arg>${pin_1}</arg>
+<arg>ELSE IF</arg>
+<arg>'2' == '${pin_sub_2}'</arg>
+<arg>Click Element</arg>
+<arg>${pin_2}</arg>
+<arg>ELSE IF</arg>
+<arg>'3' == '${pin_sub_2}'</arg>
+<arg>Click Element</arg>
+<arg>${pin_3}</arg>
+<arg>ELSE IF</arg>
+<arg>'4' == '${pin_sub_2}'</arg>
+<arg>Click Element</arg>
+<arg>${pin_4}</arg>
+<arg>ELSE IF</arg>
+<arg>'5' == '${pin_sub_2}'</arg>
+<arg>Click Element</arg>
+<arg>${pin_5}</arg>
+<arg>ELSE IF</arg>
+<arg>'6' == '${pin_sub_2}'</arg>
+<arg>Click Element</arg>
+<arg>${pin_6}</arg>
+<arg>ELSE IF</arg>
+<arg>'7' == '${pin_sub_2}'</arg>
+<arg>Click Element</arg>
+<arg>${pin_7}</arg>
+<arg>ELSE IF</arg>
+<arg>'8' == '${pin_sub_2}'</arg>
+<arg>Click Element</arg>
+<arg>${pin_8}</arg>
+<arg>ELSE IF</arg>
+<arg>'9' == '${pin_sub_2}'</arg>
+<arg>Click Element</arg>
+<arg>${pin_9}</arg>
+<arg>ELSE IF</arg>
+<arg>'0' == '${pin_sub_2}'</arg>
+<arg>Click Element</arg>
+<arg>${pin_0}</arg>
+</arguments>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${pin_5}</arg>
+</arguments>
+<msg timestamp="20200418 17:53:35.234" level="INFO">Clicking element 'xpath=//android.widget.Button[contains(@resource-id,'button_5')]'.</msg>
+<status status="PASS" starttime="20200418 17:53:35.233" endtime="20200418 17:53:36.344"></status>
+</kw>
+<status status="PASS" starttime="20200418 17:53:35.232" endtime="20200418 17:53:36.344"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'1' == '${pin_sub_3}'</arg>
+<arg>Click Element</arg>
+<arg>${pin_1}</arg>
+<arg>ELSE IF</arg>
+<arg>'2' == '${pin_sub_3}'</arg>
+<arg>Click Element</arg>
+<arg>${pin_2}</arg>
+<arg>ELSE IF</arg>
+<arg>'3' == '${pin_sub_3}'</arg>
+<arg>Click Element</arg>
+<arg>${pin_3}</arg>
+<arg>ELSE IF</arg>
+<arg>'4' == '${pin_sub_3}'</arg>
+<arg>Click Element</arg>
+<arg>${pin_4}</arg>
+<arg>ELSE IF</arg>
+<arg>'5' == '${pin_sub_3}'</arg>
+<arg>Click Element</arg>
+<arg>${pin_5}</arg>
+<arg>ELSE IF</arg>
+<arg>'6' == '${pin_sub_3}'</arg>
+<arg>Click Element</arg>
+<arg>${pin_6}</arg>
+<arg>ELSE IF</arg>
+<arg>'7' == '${pin_sub_3}'</arg>
+<arg>Click Element</arg>
+<arg>${pin_7}</arg>
+<arg>ELSE IF</arg>
+<arg>'8' == '${pin_sub_3}'</arg>
+<arg>Click Element</arg>
+<arg>${pin_8}</arg>
+<arg>ELSE IF</arg>
+<arg>'9' == '${pin_sub_3}'</arg>
+<arg>Click Element</arg>
+<arg>${pin_9}</arg>
+<arg>ELSE IF</arg>
+<arg>'0' == '${pin_sub_3}'</arg>
+<arg>Click Element</arg>
+<arg>${pin_0}</arg>
+</arguments>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${pin_7}</arg>
+</arguments>
+<msg timestamp="20200418 17:53:36.346" level="INFO">Clicking element 'xpath=//android.widget.Button[contains(@resource-id,'button_7')]'.</msg>
+<status status="PASS" starttime="20200418 17:53:36.345" endtime="20200418 17:53:37.017"></status>
+</kw>
+<status status="PASS" starttime="20200418 17:53:36.344" endtime="20200418 17:53:37.018"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'1' == '${pin_sub_4}'</arg>
+<arg>Click Element</arg>
+<arg>${pin_1}</arg>
+<arg>ELSE IF</arg>
+<arg>'2' == '${pin_sub_4}'</arg>
+<arg>Click Element</arg>
+<arg>${pin_2}</arg>
+<arg>ELSE IF</arg>
+<arg>'3' == '${pin_sub_4}'</arg>
+<arg>Click Element</arg>
+<arg>${pin_3}</arg>
+<arg>ELSE IF</arg>
+<arg>'4' == '${pin_sub_4}'</arg>
+<arg>Click Element</arg>
+<arg>${pin_4}</arg>
+<arg>ELSE IF</arg>
+<arg>'5' == '${pin_sub_4}'</arg>
+<arg>Click Element</arg>
+<arg>${pin_5}</arg>
+<arg>ELSE IF</arg>
+<arg>'6' == '${pin_sub_4}'</arg>
+<arg>Click Element</arg>
+<arg>${pin_6}</arg>
+<arg>ELSE IF</arg>
+<arg>'7' == '${pin_sub_4}'</arg>
+<arg>Click Element</arg>
+<arg>${pin_7}</arg>
+<arg>ELSE IF</arg>
+<arg>'8' == '${pin_sub_4}'</arg>
+<arg>Click Element</arg>
+<arg>${pin_8}</arg>
+<arg>ELSE IF</arg>
+<arg>'9' == '${pin_sub_4}'</arg>
+<arg>Click Element</arg>
+<arg>${pin_9}</arg>
+<arg>ELSE IF</arg>
+<arg>'0' == '${pin_sub_4}'</arg>
+<arg>Click Element</arg>
+<arg>${pin_0}</arg>
+</arguments>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${pin_9}</arg>
+</arguments>
+<msg timestamp="20200418 17:53:37.032" level="INFO">Clicking element 'xpath=//android.widget.Button[contains(@resource-id,'button_9')]'.</msg>
+<status status="PASS" starttime="20200418 17:53:37.022" endtime="20200418 17:53:37.792"></status>
+</kw>
+<status status="PASS" starttime="20200418 17:53:37.018" endtime="20200418 17:53:37.792"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'1' == '${pin_sub_5}'</arg>
+<arg>Click Element</arg>
+<arg>${pin_1}</arg>
+<arg>ELSE IF</arg>
+<arg>'2' == '${pin_sub_5}'</arg>
+<arg>Click Element</arg>
+<arg>${pin_2}</arg>
+<arg>ELSE IF</arg>
+<arg>'3' == '${pin_sub_5}'</arg>
+<arg>Click Element</arg>
+<arg>${pin_3}</arg>
+<arg>ELSE IF</arg>
+<arg>'4' == '${pin_sub_5}'</arg>
+<arg>Click Element</arg>
+<arg>${pin_4}</arg>
+<arg>ELSE IF</arg>
+<arg>'5' == '${pin_sub_5}'</arg>
+<arg>Click Element</arg>
+<arg>${pin_5}</arg>
+<arg>ELSE IF</arg>
+<arg>'6' == '${pin_sub_5}'</arg>
+<arg>Click Element</arg>
+<arg>${pin_6}</arg>
+<arg>ELSE IF</arg>
+<arg>'7' == '${pin_sub_5}'</arg>
+<arg>Click Element</arg>
+<arg>${pin_7}</arg>
+<arg>ELSE IF</arg>
+<arg>'8' == '${pin_sub_5}'</arg>
+<arg>Click Element</arg>
+<arg>${pin_8}</arg>
+<arg>ELSE IF</arg>
+<arg>'9' == '${pin_sub_5}'</arg>
+<arg>Click Element</arg>
+<arg>${pin_9}</arg>
+<arg>ELSE IF</arg>
+<arg>'0' == '${pin_sub_5}'</arg>
+<arg>Click Element</arg>
+<arg>${pin_0}</arg>
+</arguments>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${pin_5}</arg>
+</arguments>
+<msg timestamp="20200418 17:53:37.795" level="INFO">Clicking element 'xpath=//android.widget.Button[contains(@resource-id,'button_5')]'.</msg>
+<status status="PASS" starttime="20200418 17:53:37.793" endtime="20200418 17:53:38.488"></status>
+</kw>
+<status status="PASS" starttime="20200418 17:53:37.792" endtime="20200418 17:53:38.488"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'1' == '${pin_sub_6}'</arg>
+<arg>Click Element</arg>
+<arg>${pin_1}</arg>
+<arg>ELSE IF</arg>
+<arg>'2' == '${pin_sub_6}'</arg>
+<arg>Click Element</arg>
+<arg>${pin_2}</arg>
+<arg>ELSE IF</arg>
+<arg>'3' == '${pin_sub_6}'</arg>
+<arg>Click Element</arg>
+<arg>${pin_3}</arg>
+<arg>ELSE IF</arg>
+<arg>'4' == '${pin_sub_6}'</arg>
+<arg>Click Element</arg>
+<arg>${pin_4}</arg>
+<arg>ELSE IF</arg>
+<arg>'5' == '${pin_sub_6}'</arg>
+<arg>Click Element</arg>
+<arg>${pin_5}</arg>
+<arg>ELSE IF</arg>
+<arg>'6' == '${pin_sub_6}'</arg>
+<arg>Click Element</arg>
+<arg>${pin_6}</arg>
+<arg>ELSE IF</arg>
+<arg>'7' == '${pin_sub_6}'</arg>
+<arg>Click Element</arg>
+<arg>${pin_7}</arg>
+<arg>ELSE IF</arg>
+<arg>'8' == '${pin_sub_6}'</arg>
+<arg>Click Element</arg>
+<arg>${pin_8}</arg>
+<arg>ELSE IF</arg>
+<arg>'9' == '${pin_sub_6}'</arg>
+<arg>Click Element</arg>
+<arg>${pin_9}</arg>
+<arg>ELSE IF</arg>
+<arg>'0' == '${pin_sub_6}'</arg>
+<arg>Click Element</arg>
+<arg>${pin_0}</arg>
+</arguments>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${pin_1}</arg>
+</arguments>
+<msg timestamp="20200418 17:53:38.500" level="INFO">Clicking element 'xpath=//android.widget.Button[contains(@resource-id,'button_1')]'.</msg>
+<status status="PASS" starttime="20200418 17:53:38.490" endtime="20200418 17:53:39.232"></status>
+</kw>
+<status status="PASS" starttime="20200418 17:53:38.488" endtime="20200418 17:53:39.232"></status>
+</kw>
+<status status="PASS" starttime="20200418 17:53:34.950" endtime="20200418 17:53:39.232"></status>
+</kw>
+<status status="PASS" starttime="20200418 17:53:34.950" endtime="20200418 17:53:39.232"></status>
+</kw>
+<status status="PASS" starttime="20200418 17:53:34.771" endtime="20200418 17:53:39.232"></status>
+</kw>
+<status status="PASS" starttime="20200418 17:50:20.648" endtime="20200418 17:53:39.232"></status>
+</kw>
+<kw name="Choose Bank" library="TransferMenuKeyword">
+<kw name="Swipe Up Bank" library="MyCommon">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20200418 17:53:40.234" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20200418 17:53:39.233" endtime="20200418 17:53:40.234"></status>
+</kw>
+<kw name="Get Element Size" library="AppiumLibrary">
+<doc>Get element size</doc>
+<arguments>
+<arg>${ELEMENT_IDิิิิbank}</arg>
+</arguments>
+<assign>
+<var>${element_size}</var>
+</assign>
+<msg timestamp="20200418 17:54:11.041" level="INFO">Element 'xpath=//android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.ScrollView' size: {'height': 1786, 'width': 1080} </msg>
+<msg timestamp="20200418 17:54:11.042" level="INFO">${element_size} = {'height': 1786, 'width': 1080}</msg>
+<status status="PASS" starttime="20200418 17:53:40.235" endtime="20200418 17:54:11.042"></status>
+</kw>
+<kw name="Get Element Location" library="AppiumLibrary">
+<doc>Get element location</doc>
+<arguments>
+<arg>${ELEMENT_IDิิิิbank}</arg>
+</arguments>
+<assign>
+<var>${element_location}</var>
+</assign>
+<msg timestamp="20200418 17:54:41.654" level="INFO">Element 'xpath=//android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.ScrollView' location: {'x': 0, 'y': 243} </msg>
+<msg timestamp="20200418 17:54:41.654" level="INFO">${element_location} = {'x': 0, 'y': 243}</msg>
+<status status="PASS" starttime="20200418 17:54:11.043" endtime="20200418 17:54:41.654"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${element_location['x']} + (${element_size['width']} * 0.5)</arg>
+</arguments>
+<assign>
+<var>${start_x}</var>
+</assign>
+<msg timestamp="20200418 17:54:41.655" level="INFO">${start_x} = 540.0</msg>
+<status status="PASS" starttime="20200418 17:54:41.654" endtime="20200418 17:54:41.655"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${element_location['y']} + (${element_size['height']} * 0.7)</arg>
+</arguments>
+<assign>
+<var>${start_y}</var>
+</assign>
+<msg timestamp="20200418 17:54:41.655" level="INFO">${start_y} = 1493.1999999999998</msg>
+<status status="PASS" starttime="20200418 17:54:41.655" endtime="20200418 17:54:41.655"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${element_location['x']} + (${element_size['width']} * 0.5)</arg>
+</arguments>
+<assign>
+<var>${end_x}</var>
+</assign>
+<msg timestamp="20200418 17:54:41.656" level="INFO">${end_x} = 540.0</msg>
+<status status="PASS" starttime="20200418 17:54:41.655" endtime="20200418 17:54:41.656"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${element_location['y']} + (${element_size['height']} * 0.3)</arg>
+</arguments>
+<assign>
+<var>${end_y}</var>
+</assign>
+<msg timestamp="20200418 17:54:41.656" level="INFO">${end_y} = 778.8</msg>
+<status status="PASS" starttime="20200418 17:54:41.656" endtime="20200418 17:54:41.656"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>${start_x}</arg>
+<arg>${start_y}</arg>
+<arg>${end_x}</arg>
+<arg>${end_y}</arg>
+<arg>500</arg>
+</arguments>
+<status status="PASS" starttime="20200418 17:54:41.656" endtime="20200418 17:54:42.706"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20200418 17:54:43.708" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20200418 17:54:42.707" endtime="20200418 17:54:43.708"></status>
+</kw>
+<status status="PASS" starttime="20200418 17:53:39.233" endtime="20200418 17:54:43.708"></status>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<doc>Get Value From JSON using JSONPath</doc>
+<arguments>
+<arg>${json_obj}</arg>
+<arg>$.bank_name</arg>
+</arguments>
+<assign>
+<var>${bankName_value}</var>
+</assign>
+<msg timestamp="20200418 17:54:43.725" level="INFO">${bankName_value} = ['TMB']</msg>
+<status status="PASS" starttime="20200418 17:54:43.708" endtime="20200418 17:54:43.725"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${bankName_value[0]}</arg>
+</arguments>
+<status status="PASS" starttime="20200418 17:54:43.725" endtime="20200418 17:54:43.726"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'OWN SCB' == '${bankName_value[0]}'</arg>
+<arg>Click Element</arg>
+<arg>${MySCB}</arg>
+<arg>ELSE IF</arg>
+<arg>'OTHER SCB' == '${bankName_value[0]}'</arg>
+<arg>Click Element</arg>
+<arg>${OtherSCB}</arg>
+<arg>ELSE IF</arg>
+<arg>'BAAC' == '${bankName_value[0]}'</arg>
+<arg>Click Element</arg>
+<arg>${BAAC}</arg>
+<arg>ELSE IF</arg>
+<arg>'BAY' == '${bankName_value[0]}'</arg>
+<arg>Click Element</arg>
+<arg>${BAY}</arg>
+<arg>ELSE IF</arg>
+<arg>'BBL' == '${bankName_value[0]}'</arg>
+<arg>Click Element</arg>
+<arg>${BBL}</arg>
+<arg>ELSE IF</arg>
+<arg>'CIMB' == '${bankName_value[0]}'</arg>
+<arg>Click Element</arg>
+<arg>${CIMB}</arg>
+<arg>ELSE IF</arg>
+<arg>'CITI' == '${bankName_value[0]}'</arg>
+<arg>Click Element</arg>
+<arg>${CITI}</arg>
+<arg>ELSE IF</arg>
+<arg>'DB' == '${bankName_value[0]}'</arg>
+<arg>Click Element</arg>
+<arg>${DB}</arg>
+<arg>ELSE IF</arg>
+<arg>'GHB' == '${bankName_value[0]}'</arg>
+<arg>Click Element</arg>
+<arg>${GHB}</arg>
+<arg>ELSE IF</arg>
+<arg>'GSB' == '${bankName_value[0]}'</arg>
+<arg>Click Element</arg>
+<arg>${GSB}</arg>
+<arg>ELSE IF</arg>
+<arg>'HSBC' == '${bankName_value[0]}'</arg>
+<arg>Click Element</arg>
+<arg>${HSBC}</arg>
+<arg>ELSE IF</arg>
+<arg>'ICBC' == '${bankName_value[0]}'</arg>
+<arg>Click Element</arg>
+<arg>${ICBC}</arg>
+<arg>ELSE IF</arg>
+<arg>'ISBT' == '${bankName_value[0]}'</arg>
+<arg>Click Element</arg>
+<arg>${ISBT}</arg>
+<arg>ELSE IF</arg>
+<arg>'KBANK' == '${bankName_value[0]}'</arg>
+<arg>Click Element</arg>
+<arg>${KBANK}</arg>
+<arg>ELSE IF</arg>
+<arg>'KK' == '${bankName_value[0]}'</arg>
+<arg>Click Element</arg>
+<arg>${KKP}</arg>
+<arg>ELSE IF</arg>
+<arg>'KTB' == '${bankName_value[0]}'</arg>
+<arg>Click Element</arg>
+<arg>${KTB}</arg>
+<arg>ELSE IF</arg>
+<arg>'MHCB' == '${bankName_value[0]}'</arg>
+<arg>Click Element</arg>
+<arg>${Mizuho}</arg>
+<arg>ELSE IF</arg>
+<arg>'SCBT' == '${bankName_value[0]}'</arg>
+<arg>Click Element</arg>
+<arg>${Standard}</arg>
+<arg>ELSE IF</arg>
+<arg>'SMBC' == '${bankName_value[0]}'</arg>
+<arg>Click Element</arg>
+<arg>${SEC}</arg>
+<arg>ELSE IF</arg>
+<arg>'TBANK' == '${bankName_value[0]}'</arg>
+<arg>Click Element</arg>
+<arg>${TBANK}</arg>
+<arg>ELSE IF</arg>
+<arg>'TCRB' == '${bankName_value[0]}'</arg>
+<arg>Click Element</arg>
+<arg>${TCD}</arg>
+<arg>ELSE IF</arg>
+<arg>'TMB' == '${bankName_value[0]}'</arg>
+<arg>Click Element</arg>
+<arg>${TMB}</arg>
+<arg>ELSE IF</arg>
+<arg>'TSCO' == '${bankName_value[0]}'</arg>
+<arg>Click Element</arg>
+<arg>${TISCO}</arg>
+<arg>ELSE IF</arg>
+<arg>'UOB' == '${bankName_value[0]}'</arg>
+<arg>Click Element</arg>
+<arg>${UOB}</arg>
+</arguments>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${TMB}</arg>
+</arguments>
+<msg timestamp="20200418 17:54:43.730" level="INFO">Clicking element 'android=UiSelector().text("TMB")'.</msg>
+<status status="PASS" starttime="20200418 17:54:43.728" endtime="20200418 17:55:54.575"></status>
+</kw>
+<status status="PASS" starttime="20200418 17:54:43.726" endtime="20200418 17:55:54.575"></status>
+</kw>
+<status status="PASS" starttime="20200418 17:53:39.233" endtime="20200418 17:55:54.575"></status>
+</kw>
+<kw name="Input data to Transfer of Money" library="TransferMenuKeyword">
+<kw name="Get Value From Json" library="JSONLibrary">
+<doc>Get Value From JSON using JSONPath</doc>
+<arguments>
+<arg>${json_obj}</arg>
+<arg>$.bank_number</arg>
+</arguments>
+<assign>
+<var>${bankNumber_value}</var>
+</assign>
+<msg timestamp="20200418 17:55:54.592" level="INFO">${bankNumber_value} = ['3542688266']</msg>
+<status status="PASS" starttime="20200418 17:55:54.575" endtime="20200418 17:55:54.592"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${AccountNumberTransfer}</arg>
+<arg>${bankNumber_value[0]}</arg>
+</arguments>
+<msg timestamp="20200418 17:55:54.594" level="INFO">Typing text '3542688266' into text field 'id=com.scb.phone:id/edit_account_number'</msg>
+<status status="PASS" starttime="20200418 17:55:54.592" endtime="20200418 17:57:15.484"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${bankNumber_value[0]}</arg>
+</arguments>
+<status status="PASS" starttime="20200418 17:57:15.485" endtime="20200418 17:57:15.485"></status>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<doc>Get Value From JSON using JSONPath</doc>
+<arguments>
+<arg>${json_obj}</arg>
+<arg>$.amount</arg>
+</arguments>
+<assign>
+<var>${amount_value}</var>
+</assign>
+<msg timestamp="20200418 17:57:15.502" level="INFO">${amount_value} = ['1']</msg>
+<status status="PASS" starttime="20200418 17:57:15.485" endtime="20200418 17:57:15.502"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${amount_value[0]}</arg>
+</arguments>
+<status status="PASS" starttime="20200418 17:57:15.502" endtime="20200418 17:57:15.502"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${AmountTransfer}</arg>
+<arg>${amount_value[0]}</arg>
+</arguments>
+<msg timestamp="20200418 17:57:15.504" level="INFO">Typing text '1' into text field 'id=com.scb.phone:id/edit_amount'</msg>
+<status status="PASS" starttime="20200418 17:57:15.502" endtime="20200418 17:58:36.376"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${btnSubmitTransfer}</arg>
+</arguments>
+<msg timestamp="20200418 17:58:36.378" level="INFO">Clicking element 'xpath=//android.widget.TextView[contains(@resource-id,'default_button_text_view')]'.</msg>
+<status status="PASS" starttime="20200418 17:58:36.376" endtime="20200418 17:59:09.015"></status>
+</kw>
+<status status="PASS" starttime="20200418 17:55:54.575" endtime="20200418 17:59:09.015"></status>
+</kw>
+<kw name="Click button confirm" library="TransferMenuKeyword">
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${btnSubmitTransfer}</arg>
+</arguments>
+<msg timestamp="20200418 17:59:09.017" level="INFO">Clicking element 'xpath=//android.widget.TextView[contains(@resource-id,'default_button_text_view')]'.</msg>
+<status status="PASS" starttime="20200418 17:59:09.015" endtime="20200418 17:59:09.654"></status>
+</kw>
+<status status="PASS" starttime="20200418 17:59:09.015" endtime="20200418 17:59:09.654"></status>
+</kw>
+<kw name="Verify transfer succeed" library="TransferMenuKeyword">
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<arguments>
+<arg>30s</arg>
+<arg>2s</arg>
+<arg>Wait Until Page Contains Element</arg>
+<arg>${iconSuccess}</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${iconSuccess}</arg>
+</arguments>
+<status status="PASS" starttime="20200418 17:59:09.655" endtime="20200418 17:59:11.059"></status>
+</kw>
+<status status="PASS" starttime="20200418 17:59:09.655" endtime="20200418 17:59:11.059"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${titleTransferSuccess}</arg>
+</arguments>
+<status status="PASS" starttime="20200418 17:59:11.060" endtime="20200418 17:59:11.302"></status>
+</kw>
+<kw name="Get Text" library="AppiumLibrary">
+<doc>Get element text (for hybrid and mobile browser use `xpath` locator, others might cause problem)</doc>
+<arguments>
+<arg>${titleTransferSuccess}</arg>
+</arguments>
+<assign>
+<var>${gettitleTransferSuccess}</var>
+</assign>
+<msg timestamp="20200418 17:59:11.527" level="INFO">Element 'xpath=//android.widget.TextView[contains(@resource-id,'text_title')]' text is 'Successful transfer' </msg>
+<msg timestamp="20200418 17:59:11.528" level="INFO">${gettitleTransferSuccess} = Successful transfer</msg>
+<status status="PASS" starttime="20200418 17:59:11.302" endtime="20200418 17:59:11.528"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${gettitleTransferSuccess}</arg>
+</arguments>
+<msg timestamp="20200418 17:59:11.528" level="INFO">Successful transfer</msg>
+<status status="PASS" starttime="20200418 17:59:11.528" endtime="20200418 17:59:11.528"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${titleTimeSuccess}</arg>
+</arguments>
+<status status="PASS" starttime="20200418 17:59:11.528" endtime="20200418 17:59:11.777"></status>
+</kw>
+<kw name="Get Text" library="AppiumLibrary">
+<doc>Get element text (for hybrid and mobile browser use `xpath` locator, others might cause problem)</doc>
+<arguments>
+<arg>${titleTimeSuccess}</arg>
+</arguments>
+<assign>
+<var>${gettitleTimeSuccess}</var>
+</assign>
+<msg timestamp="20200418 17:59:11.969" level="INFO">Element 'xpath=//android.widget.TextView[contains(@resource-id,'text_date_time')]' text is '18 Apr 2020 - 17:59' </msg>
+<msg timestamp="20200418 17:59:11.969" level="INFO">${gettitleTimeSuccess} = 18 Apr 2020 - 17:59</msg>
+<status status="PASS" starttime="20200418 17:59:11.777" endtime="20200418 17:59:11.969"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${gettitleTimeSuccess}</arg>
+</arguments>
+<msg timestamp="20200418 17:59:11.969" level="INFO">18 Apr 2020 - 17:59</msg>
+<status status="PASS" starttime="20200418 17:59:11.969" endtime="20200418 17:59:11.969"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${titleReferenceIdSuccess}</arg>
+</arguments>
+<status status="PASS" starttime="20200418 17:59:11.969" endtime="20200418 17:59:12.159"></status>
+</kw>
+<kw name="Get Text" library="AppiumLibrary">
+<doc>Get element text (for hybrid and mobile browser use `xpath` locator, others might cause problem)</doc>
+<arguments>
+<arg>${titleReferenceIdSuccess}</arg>
+</arguments>
+<assign>
+<var>${gettitleReferenceIdSuccess}</var>
+</assign>
+<msg timestamp="20200418 17:59:12.346" level="INFO">Element 'xpath=//android.widget.TextView[contains(@resource-id,'text_reference_id')]' text is 'Ref ID: 202004187ZMaBgZxv1Lq7N8FT' </msg>
+<msg timestamp="20200418 17:59:12.346" level="INFO">${gettitleReferenceIdSuccess} = Ref ID: 202004187ZMaBgZxv1Lq7N8FT</msg>
+<status status="PASS" starttime="20200418 17:59:12.159" endtime="20200418 17:59:12.346"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${gettitleReferenceIdSuccess}</arg>
+</arguments>
+<msg timestamp="20200418 17:59:12.346" level="INFO">Ref ID: 202004187ZMaBgZxv1Lq7N8FT</msg>
+<status status="PASS" starttime="20200418 17:59:12.346" endtime="20200418 17:59:12.347"></status>
+</kw>
+<status status="PASS" starttime="20200418 17:59:09.655" endtime="20200418 17:59:12.347"></status>
+</kw>
+<kw name="POST API Confrim" library="TransferMenuKeyword">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Wait Until Keyword Succeeds</arg>
+<arg>30s</arg>
+<arg>2s</arg>
+<arg>Wait Until Page Contains Element</arg>
+<arg>${iconSuccess}</arg>
+</arguments>
+<assign>
+<var>${status_UI}</var>
+</assign>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<arguments>
+<arg>30s</arg>
+<arg>2s</arg>
+<arg>Wait Until Page Contains Element</arg>
+<arg>${iconSuccess}</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${iconSuccess}</arg>
+</arguments>
+<status status="PASS" starttime="20200418 17:59:12.348" endtime="20200418 17:59:12.545"></status>
+</kw>
+<status status="PASS" starttime="20200418 17:59:12.347" endtime="20200418 17:59:12.545"></status>
+</kw>
+<msg timestamp="20200418 17:59:12.545" level="INFO">${status_UI} = True</msg>
+<status status="PASS" starttime="20200418 17:59:12.347" endtime="20200418 17:59:12.545"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status_UI}' == 'True'</arg>
+<arg>Log</arg>
+<arg>${status_TRUE}</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${status_FAIL}</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${status_TRUE}</arg>
+</arguments>
+<msg timestamp="20200418 17:59:12.545" level="INFO">true</msg>
+<status status="PASS" starttime="20200418 17:59:12.545" endtime="20200418 17:59:12.545"></status>
+</kw>
+<status status="PASS" starttime="20200418 17:59:12.545" endtime="20200418 17:59:12.545"></status>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<doc>Get Value From JSON using JSONPath</doc>
+<arguments>
+<arg>${json_obj}</arg>
+<arg>$.url_confirm</arg>
+</arguments>
+<assign>
+<var>${URL_POST}</var>
+</assign>
+<msg timestamp="20200418 17:59:12.563" level="INFO">${URL_POST} = ['http://restapi.demoqa.com/customer']</msg>
+<status status="PASS" starttime="20200418 17:59:12.545" endtime="20200418 17:59:12.563"></status>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<doc>Get Value From JSON using JSONPath</doc>
+<arguments>
+<arg>${json_obj}</arg>
+<arg>$.que_id</arg>
+</arguments>
+<assign>
+<var>${que_idvalue}</var>
+</assign>
+<msg timestamp="20200418 17:59:12.581" level="INFO">${que_idvalue} = ['david1234']</msg>
+<status status="PASS" starttime="20200418 17:59:12.563" endtime="20200418 17:59:12.581"></status>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<doc>Get Value From JSON using JSONPath</doc>
+<arguments>
+<arg>${json_obj}</arg>
+<arg>$.ref_id</arg>
+</arguments>
+<assign>
+<var>${ref_idvalue}</var>
+</assign>
+<msg timestamp="20200418 17:59:12.597" level="INFO">${ref_idvalue} = ['david1234']</msg>
+<status status="PASS" starttime="20200418 17:59:12.581" endtime="20200418 17:59:12.597"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${URL_POST[0]}</arg>
+</arguments>
+<status status="PASS" starttime="20200418 17:59:12.597" endtime="20200418 17:59:12.597"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${que_idvalue[0]}</arg>
+</arguments>
+<status status="PASS" starttime="20200418 17:59:12.597" endtime="20200418 17:59:12.598"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${ref_idvalue[0]}</arg>
+</arguments>
+<status status="PASS" starttime="20200418 17:59:12.598" endtime="20200418 17:59:12.598"></status>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>ConfrimAPI</arg>
+<arg>${URL_POST[0]}</arg>
+</arguments>
+<msg timestamp="20200418 17:59:12.599" level="INFO">Creating Session using : alias=ConfrimAPI, url=http://restapi.demoqa.com/customer, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20200418 17:59:12.598" endtime="20200418 17:59:12.599"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>que_id=${que_idvalue[0]}</arg>
+<arg>ref_id=${ref_idvalue[0]}</arg>
+<arg>status=${status_UI}</arg>
+</arguments>
+<assign>
+<var>&amp;{body}</var>
+</assign>
+<msg timestamp="20200418 17:59:12.599" level="INFO">&amp;{body} = { que_id=david1234 | ref_id=david1234 | status=True }</msg>
+<status status="PASS" starttime="20200418 17:59:12.599" endtime="20200418 17:59:12.599"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>Content-Type=application/json</arg>
+</arguments>
+<assign>
+<var>&amp;{headers}</var>
+</assign>
+<msg timestamp="20200418 17:59:12.600" level="INFO">&amp;{headers} = { Content-Type=application/json }</msg>
+<status status="PASS" starttime="20200418 17:59:12.600" endtime="20200418 17:59:12.600"></status>
+</kw>
+<kw name="Post Request" library="RequestsLibrary">
+<doc>Send a POST request on the session object found using the
+given `alias`</doc>
+<arguments>
+<arg>ConfrimAPI</arg>
+<arg>/register</arg>
+<arg>data=${body}</arg>
+<arg>headers=${headers}</arg>
+</arguments>
+<assign>
+<var>${resp}</var>
+</assign>
+<msg timestamp="20200418 17:59:12.600" level="INFO">POST Request using : uri=/register, params=None, files=None, allow_redirects=True, timeout=None
+headers={'User-Agent': 'python-requests/2.23.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json'} 
+data={"que_id": "david1234", "ref_id": "david1234", "status": true} 
+json=None</msg>
+<msg timestamp="20200418 17:59:13.245" level="INFO">${resp} = &lt;Response [400]&gt;</msg>
+<status status="PASS" starttime="20200418 17:59:12.600" endtime="20200418 17:59:13.245"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${resp.status_code}</arg>
+</arguments>
+<status status="PASS" starttime="20200418 17:59:13.245" endtime="20200418 17:59:13.246"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${resp.content}</arg>
+</arguments>
+<status status="PASS" starttime="20200418 17:59:13.246" endtime="20200418 17:59:13.246"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${resp.status_code}</arg>
+</arguments>
+<assign>
+<var>${status_code}</var>
+</assign>
+<msg timestamp="20200418 17:59:13.246" level="INFO">${status_code} = 400</msg>
+<status status="PASS" starttime="20200418 17:59:13.246" endtime="20200418 17:59:13.246"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${status_code}</arg>
+<arg>200</arg>
+</arguments>
+<msg timestamp="20200418 17:59:13.247" level="FAIL">400 != 200</msg>
+<status status="FAIL" starttime="20200418 17:59:13.246" endtime="20200418 17:59:13.247"></status>
+</kw>
+<status status="FAIL" starttime="20200418 17:59:12.347" endtime="20200418 17:59:13.247"></status>
+</kw>
+<kw name="Click Back To Account" library="TransferMenuKeyword" type="teardown">
+<kw name="Swipe Up Slip" library="MyCommon">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20200418 17:59:14.250" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20200418 17:59:13.248" endtime="20200418 17:59:14.250"></status>
+</kw>
+<kw name="Get Element Size" library="AppiumLibrary">
+<doc>Get element size</doc>
+<arguments>
+<arg>${ELEMENT_IDslip}</arg>
+</arguments>
+<assign>
+<var>${element_size}</var>
+</assign>
+<msg timestamp="20200418 17:59:14.535" level="INFO">Element 'xpath=//android.widget.RelativeLayout[contains(@resource-id,'root_view_successfu')]' size: {'height': 1940, 'width': 1080} </msg>
+<msg timestamp="20200418 17:59:14.536" level="INFO">${element_size} = {'height': 1940, 'width': 1080}</msg>
+<status status="PASS" starttime="20200418 17:59:14.250" endtime="20200418 17:59:14.536"></status>
+</kw>
+<kw name="Get Element Location" library="AppiumLibrary">
+<doc>Get element location</doc>
+<arguments>
+<arg>${ELEMENT_IDslip}</arg>
+</arguments>
+<assign>
+<var>${element_location}</var>
+</assign>
+<msg timestamp="20200418 17:59:14.796" level="INFO">Element 'xpath=//android.widget.RelativeLayout[contains(@resource-id,'root_view_successfu')]' location: {'x': 0, 'y': 89} </msg>
+<msg timestamp="20200418 17:59:14.797" level="INFO">${element_location} = {'x': 0, 'y': 89}</msg>
+<status status="PASS" starttime="20200418 17:59:14.536" endtime="20200418 17:59:14.797"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${element_location['x']} + (${element_size['width']} * 0.5)</arg>
+</arguments>
+<assign>
+<var>${start_x}</var>
+</assign>
+<msg timestamp="20200418 17:59:14.797" level="INFO">${start_x} = 540.0</msg>
+<status status="PASS" starttime="20200418 17:59:14.797" endtime="20200418 17:59:14.797"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${element_location['y']} + (${element_size['height']} * 0.7)</arg>
+</arguments>
+<assign>
+<var>${start_y}</var>
+</assign>
+<msg timestamp="20200418 17:59:14.798" level="INFO">${start_y} = 1447.0</msg>
+<status status="PASS" starttime="20200418 17:59:14.797" endtime="20200418 17:59:14.798"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${element_location['x']} + (${element_size['width']} * 0.5)</arg>
+</arguments>
+<assign>
+<var>${end_x}</var>
+</assign>
+<msg timestamp="20200418 17:59:14.798" level="INFO">${end_x} = 540.0</msg>
+<status status="PASS" starttime="20200418 17:59:14.798" endtime="20200418 17:59:14.798"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${element_location['y']} + (${element_size['height']} * 0.3)</arg>
+</arguments>
+<assign>
+<var>${end_y}</var>
+</assign>
+<msg timestamp="20200418 17:59:14.798" level="INFO">${end_y} = 671.0</msg>
+<status status="PASS" starttime="20200418 17:59:14.798" endtime="20200418 17:59:14.798"></status>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<arguments>
+<arg>${start_x}</arg>
+<arg>${start_y}</arg>
+<arg>${end_x}</arg>
+<arg>${end_y}</arg>
+<arg>500</arg>
+</arguments>
+<status status="PASS" starttime="20200418 17:59:14.798" endtime="20200418 17:59:15.851"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20200418 17:59:16.852" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20200418 17:59:15.851" endtime="20200418 17:59:16.852"></status>
+</kw>
+<status status="PASS" starttime="20200418 17:59:13.248" endtime="20200418 17:59:16.852"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${backtoAccount}</arg>
+</arguments>
+<msg timestamp="20200418 17:59:16.854" level="INFO">Clicking element 'xpath=//android.widget.TextView[contains(@resource-id,'return_button')]'.</msg>
+<status status="PASS" starttime="20200418 17:59:16.852" endtime="20200418 17:59:17.656"></status>
+</kw>
+<status status="PASS" starttime="20200418 17:59:13.247" endtime="20200418 17:59:17.656"></status>
+</kw>
+<status status="FAIL" starttime="20200418 17:49:41.622" endtime="20200418 17:59:17.657" critical="yes">400 != 200</status>
+</test>
+<kw name="Close Appium Server" library="TransferMenuKeyword" type="teardown">
+<kw name="Terminate All Processes" library="Process">
+<doc>Terminates all still running processes started by this library.</doc>
+<arguments>
+<arg>kill=True</arg>
+</arguments>
+<status status="PASS" starttime="20200418 17:59:17.659" endtime="20200418 17:59:17.659"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20200418 17:59:22.660" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20200418 17:59:17.659" endtime="20200418 17:59:22.660"></status>
+</kw>
+<status status="PASS" starttime="20200418 17:59:17.659" endtime="20200418 17:59:22.661"></status>
+</kw>
+<status status="FAIL" starttime="20200418 17:49:32.177" endtime="20200418 17:59:22.661"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="1">Critical Tests</stat>
+<stat pass="2" fail="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="1" id="s1" name="scbApp">scbApp</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

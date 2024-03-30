@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.0.4 (Python 3.6.4 on darwin)" generated="20200404 16:36:49.059">
+<suite id="s1" name="scbApp" source="/Users/pearbum/scb_easy/scbApp.robot">
+<test id="s1-t1" name="Read JSON File">
+<kw name="Read json file" library="TransferMenuKeyword">
+<kw name="Load JSON From File" library="JSONLibrary">
+<doc>Load JSON from file.</doc>
+<arguments>
+<arg>/Users/pearbum/scb_easy/Resource/dataFile/dataTransfer.json</arg>
+</arguments>
+<assign>
+<var>${json_obj}</var>
+</assign>
+<msg timestamp="20200404 16:36:49.720" level="INFO">${json_obj} = {'bank_number': '0271688563', 'bank_name': 'กสิกรไทย', 'amount': '1', 'pin': '176953', 'url_confirm': 'http://restapi.demoqa.com/customer', 'que_id': '', 'ref_id': '', 'status': True}</msg>
+<status status="PASS" starttime="20200404 16:36:49.719" endtime="20200404 16:36:49.720"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${json_obj}</arg>
+</arguments>
+<msg timestamp="20200404 16:36:49.721" level="INFO">${json_obj} = {'bank_number': '0271688563', 'bank_name': 'กสิกรไทย', 'amount': '1', 'pin': '176953', 'url_confirm': 'http://restapi.demoqa.com/customer', 'que_id': '', 'ref_id': '', 'status': True}</msg>
+<status status="PASS" starttime="20200404 16:36:49.720" endtime="20200404 16:36:49.721"></status>
+</kw>
+<status status="PASS" starttime="20200404 16:36:49.719" endtime="20200404 16:36:49.722"></status>
+</kw>
+<status status="PASS" starttime="20200404 16:36:49.718" endtime="20200404 16:36:49.722" critical="yes"></status>
+</test>
+<test id="s1-t2" name="Open scb app">
+<kw name="Open App Android" library="TransferMenuKeyword">
+<kw name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<msg timestamp="20200404 16:36:49.724" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20200404 16:36:49.723" endtime="20200404 16:36:49.724"></status>
+</kw>
+<status status="FAIL" starttime="20200404 16:36:49.722" endtime="20200404 16:36:49.724"></status>
+</kw>
+<kw name="Before close app check succeed transfer" library="MyCommon" type="teardown">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Wait Until Keyword Succeeds</arg>
+<arg>30s</arg>
+<arg>2s</arg>
+<arg>Wait Until Page Contains Element</arg>
+<arg>${iconSuccess}</arg>
+</arguments>
+<assign>
+<var>${status_UI}</var>
+</assign>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<arguments>
+<arg>30s</arg>
+<arg>2s</arg>
+<arg>Wait Until Page Contains Element</arg>
+<arg>${iconSuccess}</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${iconSuccess}</arg>
+</arguments>
+<msg timestamp="20200404 16:36:49.732" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20200404 16:36:49.729" endtime="20200404 16:36:49.732"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${iconSuccess}</arg>
+</arguments>
+<msg timestamp="20200404 16:36:51.736" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20200404 16:36:51.735" endtime="20200404 16:36:51.736"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${iconSuccess}</arg>
+</arguments>
+<msg timestamp="20200404 16:36:53.739" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20200404 16:36:53.737" endtime="20200404 16:36:53.739"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${iconSuccess}</arg>
+</arguments>
+<msg timestamp="20200404 16:36:55.743" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20200404 16:36:55.742" endtime="20200404 16:36:55.743"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${iconSuccess}</arg>
+</arguments>
+<msg timestamp="20200404 16:36:57.747" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20200404 16:36:57.746" endtime="20200404 16:36:57.747"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${iconSuccess}</arg>
+</arguments>
+<msg timestamp="20200404 16:36:59.749" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20200404 16:36:59.748" endtime="20200404 16:36:59.749"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${iconSuccess}</arg>
+</arguments>
+<msg timestamp="20200404 16:37:01.752" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20200404 16:37:01.751" endtime="20200404 16:37:01.752"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${iconSuccess}</arg>
+</arguments>
+<msg timestamp="20200404 16:37:03.754" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20200404 16:37:03.753" endtime="20200404 16:37:03.754"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${iconSuccess}</arg>
+</arguments>
+<msg timestamp="20200404 16:37:05.757" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20200404 16:37:05.756" endtime="20200404 16:37:05.757"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${iconSuccess}</arg>
+</arguments>
+<msg timestamp="20200404 16:37:07.759" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20200404 16:37:07.758" endtime="20200404 16:37:07.759"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${iconSuccess}</arg>
+</arguments>
+<msg timestamp="20200404 16:37:09.761" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20200404 16:37:09.760" endtime="20200404 16:37:09.761"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${iconSuccess}</arg>
+</arguments>
+<msg timestamp="20200404 16:37:11.764" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20200404 16:37:11.763" endtime="20200404 16:37:11.764"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${iconSuccess}</arg>
+</arguments>
+<msg timestamp="20200404 16:37:13.767" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20200404 16:37:13.766" endtime="20200404 16:37:13.767"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${iconSuccess}</arg>
+</arguments>
+<msg timestamp="20200404 16:37:15.775" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20200404 16:37:15.768" endtime="20200404 16:37:15.775"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${iconSuccess}</arg>
+</arguments>
+<msg timestamp="20200404 16:37:17.778" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20200404 16:37:17.777" endtime="20200404 16:37:17.778"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${iconSuccess}</arg>
+</arguments>
+<msg timestamp="20200404 16:37:19.781" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20200404 16:37:19.780" endtime="20200404 16:37:19.781"></status>
+</kw>
+<msg timestamp="20200404 16:37:19.781" level="FAIL">Keyword 'Wait Until Page Contains Element' failed after retrying for 30 seconds. The last error was: No application is open</msg>
+<status status="FAIL" starttime="20200404 16:36:49.727" endtime="20200404 16:37:19.781"></status>
+</kw>
+<msg timestamp="20200404 16:37:19.781" level="INFO">${status_UI} = False</msg>
+<status status="PASS" starttime="20200404 16:36:49.726" endtime="20200404 16:37:19.781"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status_UI}' == 'True'</arg>
+<arg>Log</arg>
+<arg>${status_TRUE}</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${status_FAIL}</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${status_FAIL}</arg>
+</arguments>
+<msg timestamp="20200404 16:37:19.783" level="INFO">fail</msg>
+<status status="PASS" starttime="20200404 16:37:19.782" endtime="20200404 16:37:19.783"></status>
+</kw>
+<status status="PASS" starttime="20200404 16:37:19.781" endtime="20200404 16:37:19.783"></status>
+</kw>
+<kw name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<msg timestamp="20200404 16:37:19.783" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20200404 16:37:19.783" endtime="20200404 16:37:19.784"></status>
+</kw>
+<status status="FAIL" starttime="20200404 16:36:49.725" endtime="20200404 16:37:19.784">No application is open</status>
+</kw>
+<status status="FAIL" starttime="20200404 16:36:49.722" endtime="20200404 16:37:19.784" critical="yes">No application is open
+
+Also teardown failed:
+No application is open</status>
+</test>
+<status status="FAIL" starttime="20200404 16:36:49.063" endtime="20200404 16:37:19.784"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="1">Critical Tests</stat>
+<stat pass="1" fail="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="1" id="s1" name="scbApp">scbApp</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -1,0 +1,10 @@
+{
+  "bank_number": "3542688266",
+  "bank_name": "TMB",
+  "amount": "1",
+  "pin": "357951",
+  "url_confirm": "http://restapi.demoqa.com/customer",
+  "que_id": "david1234",
+  "ref_id": "david1234",
+  "status": true
+}

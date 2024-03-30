@@ -1,0 +1,56 @@
+[35m[Appium][39m Welcome to Appium v1.15.1
+[35m[Appium][39m Appium REST http interface listener started on 0.0.0.0:4723
+[35m[HTTP][39m [37m-->[39m [37mPOST[39m [37m/wd/hub/session[39m
+[35m[HTTP][39m [90m{"capabilities":{"alwaysMatch":{"platformName":"Android"},"firstMatch":[{}]},"desiredCapabilities":{"platformVersion":"8.0.0","deviceName":"Galaxy S7","platformName":"Android"}}[39m
+[debug] [35m[W3C][39m Calling AppiumDriver.createSession() with args: [{"platformVersion":"8.0.0","deviceName":"Galaxy S7","platformName":"Android"},null,{"alwaysMatch":{"platformName":"Android"},"firstMatch":[{}]}]
+[debug] [35m[BaseDriver][39m Event 'newSessionRequested' logged at 1587139184225 (22:59:44 GMT+0700 (Indochina Time))
+[35m[Appium][39m Could not parse W3C capabilities: 'deviceName' can't be blank
+[35m[Appium][39m Trying to fix W3C capabilities by merging them with JSONWP caps
+[35m[BaseDriver][39m The capabilities ["platformVersion","deviceName"] are not standard capabilities and should have an extension prefix
+[35m[Appium][39m 
+[35m[Appium][39m ======================================================================
+[35m[Appium][39m   DEPRECATION WARNING:
+[35m[Appium][39m 
+[35m[Appium][39m   The 'automationName' capability was not provided in the desired 
+[35m[Appium][39m   capabilities for this Android session
+[35m[Appium][39m 
+[35m[Appium][39m   Setting 'automationName=UiAutomator2' by default and using the 
+[35m[Appium][39m   UiAutomator2 Driver
+[35m[Appium][39m 
+[35m[Appium][39m   The next major version of Appium (2.x) will **require** the 
+[35m[Appium][39m   'automationName' capability to be set for all sessions on all 
+[35m[Appium][39m   platforms
+[35m[Appium][39m 
+[35m[Appium][39m   In previous versions (Appium <= 1.13.x), the default was 
+[35m[Appium][39m   'automationName=UiAutomator1'
+[35m[Appium][39m 
+[35m[Appium][39m   If you wish to use that automation instead of UiAutomator2, please 
+[35m[Appium][39m   add 'automationName=UiAutomator1' to your desired capabilities
+[35m[Appium][39m 
+[35m[Appium][39m   For more information about drivers, please visit 
+[35m[Appium][39m   http://appium.io/docs/en/about-appium/intro/ and explore the 
+[35m[Appium][39m   'Drivers' menu
+[35m[Appium][39m 
+[35m[Appium][39m ======================================================================
+[35m[Appium][39m 
+[35m[Appium][39m Appium v1.15.1 creating new AndroidUiautomator2Driver (v1.37.2) session
+[debug] [35m[BaseDriver][39m W3C capabilities and MJSONWP desired capabilities were provided
+[debug] [35m[BaseDriver][39m Creating session with W3C capabilities: {
+[debug] [35m[BaseDriver][39m   "alwaysMatch": {
+[debug] [35m[BaseDriver][39m     "platformName": "Android",
+[debug] [35m[BaseDriver][39m     "appium:platformVersion": "8.0.0",
+[debug] [35m[BaseDriver][39m     "appium:deviceName": "Galaxy S7"
+[debug] [35m[BaseDriver][39m   },
+[debug] [35m[BaseDriver][39m   "firstMatch": [
+[debug] [35m[BaseDriver][39m     {}
+[debug] [35m[BaseDriver][39m   ]
+[debug] [35m[BaseDriver][39m }
+[35m[BaseDriver][39m Session created with session id: af59097c-a1ae-40c3-bd25-8fd756f6c628
+[35m[UiAutomator2][39m Neither 'app' nor 'appPackage' was set. Starting UiAutomator2 without the target application
+[35m[ADB][39m Found 0 'build-tools' folders under '/Users/Shared/Android/sdk' (newest first):
+[debug] [35m[UiAutomator2][39m Deleting UiAutomator2 session
+[debug] [35m[BaseDriver][39m Event 'newSessionStarted' logged at 1587139184399 (22:59:44 GMT+0700 (Indochina Time))
+[debug] [35m[W3C][39m Encountered internal error running command: Error: Could not find 'adb' in ["/Users/Shared/Android/sdk/platform-tools/adb","/Users/Shared/Android/sdk/emulator/adb","/Users/Shared/Android/sdk/tools/adb","/Users/Shared/Android/sdk/tools/bin/adb"]. Do you have Android Build Tools installed at '/Users/Shared/Android/sdk'?
+[debug] [35m[W3C][39m     at ADB.getBinaryFromSdkRoot (/usr/local/lib/node_modules/appium/node_modules/appium-adb/lib/tools/system-calls.js:106:11)
+[35m[HTTP][39m [37m<-- POST /wd/hub/session [39m[31m500[39m [90m241 ms - 1049[39m
+[35m[HTTP][39m [90m[39m
